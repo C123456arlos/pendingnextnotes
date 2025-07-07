@@ -20,7 +20,7 @@ import '@/styles/ai-response.css'
 type Props = {
     user: User | null
 }
-type RefObject = any
+
 function AskAIButton({ user }: Props) {
     const router = useRouter()
     const [isPending, startTransition] = useTransition()
@@ -41,7 +41,7 @@ function AskAIButton({ user }: Props) {
             setOpen(isOpen)
         }
     }
-    const textareaRef: RefObject = useRef<HTMLTextAreaElement>(null)
+    const textareaRef = useRef<HTMLTextAreaElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
     const handleInput = () => {
         const textarea = textareaRef.current
@@ -50,7 +50,7 @@ function AskAIButton({ user }: Props) {
         textarea.style.height = `${textarea.scrollHeight}px`
     }
     const handleClickInput = () => {
-        textareaRef.current.focus()
+        textareaRef?.current?.focus()
     }
     const handleSubmit = () => {
         if (!questionText.trim()) return

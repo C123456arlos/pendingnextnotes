@@ -1,6 +1,4 @@
 'use client'
-
-import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 import { CardContent, CardFooter } from "./ui/card"
 import { Label } from "./ui/label"
@@ -22,12 +20,8 @@ const AuthForm = ({ type }: Props) => {
             const email = formData.get('email') as string
             const password = formData.get('password') as string
             let errorMessage
-            let title
-            let description
             if (isLoginForm) {
                 errorMessage = (await (await loginAction(email, password)).errorMessage)
-                title = 'logged in'
-                description = 'you have been successfully logged in'
             } else {
                 errorMessage = (await (await signupAction(email, password)).errorMessage)
             }
