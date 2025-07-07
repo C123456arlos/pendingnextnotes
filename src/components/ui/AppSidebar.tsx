@@ -2,7 +2,6 @@ import { getUser } from "@/auth/server"
 import {
     Sidebar,
     SidebarContent,
-    SidebarFooter,
     SidebarGroup,
     SidebarGroupLabel,
 } from "@/components/ui/sidebar"

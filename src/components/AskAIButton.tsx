@@ -10,8 +10,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
 import { Fragment, useRef, useState, useTransition } from "react"
 import { useRouter } from "next/navigation"
 import { Textarea } from "./ui/textarea"
@@ -34,9 +33,9 @@ function AskAIButton({ user }: Props) {
             router.push('/login')
         } else {
             if (isOpen) {
-                setQuestionText(''),
-                    setQuestions([])
-                setResponses([])
+                setQuestionText('');
+                setQuestions([]);
+                setResponses([]);
 
             }
             setOpen(isOpen)

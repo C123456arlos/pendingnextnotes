@@ -5,7 +5,7 @@ import { Button } from "./ui/button"
 import { useState } from "react"
 // import { useToast } from '@/hooks/use-toast'
 import { useRouter } from 'next/navigation'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { logOutAction } from '@/actions/users'
 // import { toast } from 'sonner';
 // import { Toast } from '@radix-ui/react-toast'

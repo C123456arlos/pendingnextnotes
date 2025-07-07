@@ -14,7 +14,6 @@ import { Button } from "./ui/button"
 import { Loader2, Trash2 } from "lucide-react"
 import { useTransition } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { useToast } from "@/hooks/use-toast"
 import { toast } from "sonner"
 import { deleteNoteAction } from "@/actions/notes"
 

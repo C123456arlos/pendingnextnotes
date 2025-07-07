@@ -8,8 +8,6 @@ import { useTransition } from "react"
 import { Button } from "./ui/button"
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
-import { Toast } from "@radix-ui/react-toast"
-import { Router } from "next/router"
 import { loginAction, signupAction } from "@/actions/users"
 
 type Props = {
@@ -18,7 +16,6 @@ type Props = {
 const AuthForm = ({ type }: Props) => {
     const isLoginForm = type === 'login'
     const router = useRouter()
-    const toast = useToast()
     const [isPending, startTransition] = useTransition()
     const handleSubmit = (formData: FormData) => {
         startTransition(async () => {
@@ -33,8 +30,6 @@ const AuthForm = ({ type }: Props) => {
                 description = 'you have been successfully logged in'
             } else {
                 errorMessage = (await (await signupAction(email, password)).errorMessage)
-                title = 'signed up'
-                description = 'check email for confirmation link'
             }
             if (!errorMessage) {
                 console.log('success')

@@ -28,10 +28,10 @@ const SidebarGroupContent = ({ notes }: Props) => {
     //         threshold: .4
     //     })
     // }, [localNotes])
-    const filteredNotes = searchText ? fuse.search(searchText).map((result: any) => result.item) : localNotes
+    const filteredNotes = searchText ? fuse.search(searchText).map((result) => result.item) : localNotes
     const deleteNoteLocally = (noteId: string) => {
         setLocalNotes((prevNotes) =>
-            prevNotes.filter((note: any) => note.id !== noteId))
+            prevNotes.filter((note) => note.id !== noteId))
     }
     return (
         <SidebarGroupContentShadCN>
